@@ -1,0 +1,83 @@
+/* Settings page styles */
+
+.settings-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem !important;
+}
+
+.settings-section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.settings-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.settings-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.font-size-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.export-import-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.file-input-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  gap: 0.5rem;
+}
+
+.file-input-label:hover {
+  background-color: var(--border-color);
+}

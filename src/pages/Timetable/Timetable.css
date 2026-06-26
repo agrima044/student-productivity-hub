@@ -1,0 +1,154 @@
+/* Weekly Timetable Styles */
+
+.timetable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timetable-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.timetable-column {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 400px;
+}
+
+.day-header {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.class-card {
+  padding: 0.875rem !important;
+  background-color: var(--bg-primary) !important;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.class-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+}
+
+.class-card.active-class {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+  background-color: var(--color-primary-light) !important;
+}
+
+.active-pulse {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: pulse 1.5s infinite;
+}
+
+.class-time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.class-card.active-class .class-time {
+  color: var(--color-primary-hover);
+}
+
+.class-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+}
+
+.class-professor {
+  font-style: italic;
+}
+
+.class-delete-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  padding: 0.25rem;
+  border-radius: var(--radius-full);
+}
+
+.class-card:hover .class-delete-btn {
+  opacity: 1;
+}
+
+.class-delete-btn:hover {
+  color: var(--color-danger);
+  background-color: var(--bg-tertiary);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .timetable-grid {
+    grid-template-columns: 1fr;
+  }
+  .timetable-column {
+    min-height: auto;
+  }
+}

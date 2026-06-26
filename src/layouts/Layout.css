@@ -1,0 +1,215 @@
+/* Header Dropdowns Styling */
+
+/* Notification Badge Dropdown */
+.notifications-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 320px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-header h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.dropdown-body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.dropdown-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.notification-item {
+  display: flex;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  position: relative;
+  gap: 0.75rem;
+}
+
+.notification-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.notification-item.read {
+  opacity: 0.7;
+}
+
+.notification-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.notification-item.read .notification-indicator {
+  visibility: hidden;
+}
+
+/* Color markers based on notification types */
+.notification-item.type-success .notification-indicator { background-color: var(--color-success); }
+.notification-item.type-warning .notification-indicator { background-color: var(--color-warning); }
+.notification-item.type-danger .notification-indicator { background-color: var(--color-danger); }
+.notification-item.type-info .notification-indicator { background-color: var(--color-info); }
+
+.notification-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1;
+}
+
+.notification-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.notification-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.notification-time {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.dropdown-footer {
+  padding: 0.625rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+
+/* User Profile Dropdown */
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 220px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-dropdown-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-dropdown-header h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.user-dropdown-header p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.user-dropdown-body {
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.dropdown-item.text-danger:hover {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+/* Avatars */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 1.5px solid var(--border-color);
+}
+
+.user-avatar-placeholder {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .user-name-display {
+    display: none !important;
+  }
+}
